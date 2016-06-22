@@ -6,16 +6,18 @@
   <thead>
     <tr>
 
-      <th>日にち</th>
-      <th>時間</th>
-      <th>参加人数</th>
-      <th>イベント名</th>
-      <th>場所</th>
-      <th>締め切り</th>
+      <th class="day">日にち</th>
+      <th class="hour">時間</th>
+      <th class="num">参加人数</th>
+      <th class="evname">イベント名</th>
+      <th class="place">場所</th>
+      <th class="deadline">締め切り</th>
+      <div class="serch">
       <th></th>
       <th></th>
       <th></th>
       <th></th>
+      </div>
 
     </tr>
   </thead>
@@ -23,21 +25,18 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.event_date %></td>
-        <td><%= event.event_time.strftime("%I:%M ~ ") %></td>
-<<<<<<< HEAD
-=======
-        <td><%= event.event_time%></td>
+        <td class="day"><%= event.event_date %></td>
+        <td class="hour"><%= event.event_time.strftime("%I:%M ~ ") %></td>
+        <td class="num"><%= event.event_numofpeople %></td>
+        <td class="evname"><%= event.event_name %></td>
+        <td class="place"><%= event.event_place %></td>
+        <td class="deadline"><%= event.event_deadline %></td>
 
->>>>>>> 507148f721de2ce7e768b0691fe0f92d45e15c1b
-        <td><%= event.event_numofpeople %></td>
-        <td><%= event.event_name %></td>
-        <td><%= event.event_place %></td>
-        <td><%= event.event_deadline %></td>
-
+        <div class="serch">
         <td><%= link_to '詳細', event %></td>
         <td><%= link_to '編集', edit_event_path(event) %></td>
         <td><%= link_to '削除', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </div>
       </tr>
     <% end %>
   </tbody>
