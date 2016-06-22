@@ -26,13 +26,11 @@ border-right: 1px solid #ccc;
 border-bottom: 1px solid #ccc;
 }
 td{
-width: 10%;
 padding: 6px;
 border-bottom: 1px dotted #999;
 border-left: 1px solid #ccc;
 }
 th {
-width:10%;
 padding: 6px; text-align: left;
 vertical-align: top;
 color: #666666;
@@ -40,13 +38,13 @@ background: url(bg.jpg) repeat-x top left #eee;
 border-bottom: 1px dotted #999;
 border-left: 1px solid #ccc;
 }
-.day{}
-.hour{}
-.num{}
-.evname{}
-.place{}
-.deadline{}
-.serch{}
+.day{ width:10%; }
+.hour{ width:10%; }
+.num{ width:10%; }
+.evname{ width:25%; }
+.place{ width:20%; }
+.deadline{ width:10%; }
+.serch{ width:5%; }
 
 
 th { border-bottom: 1px solid #DDD; }
