@@ -2,9 +2,9 @@
 
 <h1>イベント一覧</h1>
 
-<table class="table">
+<table class="ev_table">
   <thead>
-    <tr class="tr">
+    <tr>
 
       <th class="day">日にち</th>
       <th class="hour">時間</th>
@@ -23,7 +23,7 @@
 
   <tbody>
     <% @events.each do |event| %>
-      <tr class="tr">
+      <tr>
         <td class="day"><%= event.event_date %></td>
         <td class="hour"><%= event.event_time.strftime("%I:%M ~ ") %></td>
         <td class="num"><%= event.event_numofpeople %></td>
