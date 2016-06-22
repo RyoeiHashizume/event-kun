@@ -19,14 +19,9 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-<<<<<<< HEAD
 
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-=======
         <td><%= event.event_date %></td>
-        <td><%= event.event_time.strftime("%I:%M ~ ") %></td>
+        <td><%= event.event_time.strftime("%I:%M ~ ")%></td>
         <td><%= event.event_numofpeople %></td>
         <td><%= event.event_name %></td>
         <td><%= event.event_place %></td>
@@ -35,7 +30,6 @@
         <td><%= link_to '詳細', event %></td>
         <td><%= link_to '編集', edit_event_path(event) %></td>
         <td><%= link_to '削除', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
->>>>>>> eeb945a26297b383728da9221621d9071d32887d
       </tr>
     <% end %>
   </tbody>
