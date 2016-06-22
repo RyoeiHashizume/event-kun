@@ -33,14 +33,6 @@
         <td class="deadline"><%= event.event_deadline %></td>
 
         <div class="serch">
-        <td><%= event.event_date %></td>
-        <td><%= event.event_time.strftime("%I:%M ~ ") %></td>
-        <td><%= event.event_time%></td>
-        <td><%= event.event_numofpeople %></td>
-        <td><%= event.event_name %></td>
-        <td><%= event.event_place %></td>
-        <td><%= event.event_deadline %></td>
-
         <td><%= link_to '詳細', event %></td>
         <td><%= link_to '編集', edit_event_path(event) %></td>
         <td><%= link_to '削除', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
