@@ -5,7 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-table_names = %w(users)
+
+0.upto(2) do |i|
+User.create(
+  user_name: "aaaa#{i}",
+  email: "bbbb#{i}@aaaa",
+  password: "#{i}#{i}#{i}#{i}#{i}#{i}",
+  company_number: "#{i}#{i}#{i}#{i}#{i}#{i}",
+  kanji: if i == 1 then true else false end,
+  gender: if i == 1 then true else false end
+  )
+end
+
+table_names = %w(events)
 table_names.each do |table_name|
   path = Rails.root.join("db/seeds", Rails.env, table_name + ".rb")
   if File.exist?(path)
@@ -13,3 +25,8 @@ table_names.each do |table_name|
     require path
   end
 end
+
+
+
+
+

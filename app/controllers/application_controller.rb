@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
    def configure_permitted_parameters
     #strong parametersを設定し、usernameを許可
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:user_name, :company_number, :email, :kanji, :gender,:password, :password_confirmation) }
-  end
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:user_name, :company_number, :email, :kanji, :gender,:password, :password_confirmation)}
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:user_name, :company_number, :email, :kanji, :gender,:password, :password_confirmation, :current_password) }
+end
 end
