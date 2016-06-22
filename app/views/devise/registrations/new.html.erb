@@ -4,6 +4,17 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :user_name, "名前" %><br />
+    <%= f.email_field :user_name, :placeholder => "User name"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :company_number, "社員番号" %><br />
+    <%= f.email_field :company_number, :placeholder => "6桁の社員番号を入力してください"%>
+  </div>
+
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, :placeholder => "User name" , autofocus: true %>
   </div>
