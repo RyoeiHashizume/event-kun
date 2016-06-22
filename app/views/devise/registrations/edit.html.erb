@@ -4,8 +4,28 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :user_name, "名前" %><br />
+    <%= f.text_field :user_name, :placeholder => "User name"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :company_number, "社員番号" %><br />
+    <%= f.number_field :company_number, :placeholder => "6桁の社員番号を入力してください"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :email ,"連絡先" %><br />
+    <%= f.email_field :email, autofocus: true, :placeholder => "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :kanji, "幹事"%><br />
+    <%= f.check_box :kanji , {}, true, false%> 幹事の方はチェックをお願いします
+  </div>
+
+  <div class="field">
+    <%= f.label :gender, "性別"%><br />
+    <%= f.check_box :gender , {}, true, false%> 男性の方はチェックをお願いします
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -13,27 +33,36 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.label :password, "新しいパスワード"%> <%# <i>(leave blank if you don't want to change it)</i> %><br />
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off", :placeholder => "Password (6minimum characters)" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.label :password_confirmation, "新しいパスワード(確認用)"%><br />
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => "Password (6minimum characters)" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+    <%= f.label :current_password, "現在のパスワード" %><br />
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :current_password, autocomplete: "off", :placeholder => "Password (6minimum characters)" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "変更を保存" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>アカウント消去</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p> <%= button_to "アカウント消去", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>

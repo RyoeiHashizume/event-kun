@@ -16,8 +16,8 @@
 
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, :placeholder => "User name" , autofocus: true %>
+    <%= f.label :email ,"連絡先" %><br />
+    <%= f.email_field :email, :placeholder => "email" , autofocus: true %>
   </div>
 
   <div class="field">
@@ -31,16 +31,16 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, "パスワード" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, :placeholder => "Password (6minimum characters)" , autocomplete: "off" %>
+    <%= f.password_field :password ,:placeholder => "Password (6minimum characters)" , autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.label :password_confirmation, "パスワード(確認用)" %><br />
+    <%= f.password_field :password_confirmation , autocomplete: "off" %>
   </div>
 
   <div class="actions">
