@@ -11,10 +11,53 @@
     </div>
   <% end %>
 
+
+
   <div class="field">
-    <%= f.label :event_name %><br>
+    <%= f.label :event_name, "イベント名" %><br>
     <%= f.text_field :event_name %>
   </div>
+
+  <div class="field">
+    <%= f.label :event_date, "日程" %><br>
+    <%= f.date_field :event_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :event_time, "時間" %><br>
+    <%= f.time_field :event_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :event_place, "店名 or 開催場所" %><br>
+    <%= f.text_field :event_place %>
+  </div>
+
+  <div class="field">
+    <%= f.label :event_contents, "イベント内容" %><br>
+    <%= f.text_area :event_contents, cols: 60, rows: 8 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :event_money, "費用" %><br>
+    <%= f.number_field :event_money %>
+  </div>
+
+  <div class="field">
+    <%= f.label :event_numofpeople, "最大参加人数" %><br>
+    <%= f.number_field :event_numofpeople %>
+  </div>
+
+  <div class="field">
+    <%= f.label :event_deadline, "締切" %><br>
+    <%= f.date_field :event_deadline %>
+  </div>
+
+  <div class="field">
+    <%= f.label :event_kanji_id, "幹事ID" %><br>
+    <%= f.number_field :event_kanji_id %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
