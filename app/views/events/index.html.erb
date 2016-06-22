@@ -12,6 +12,9 @@
       <th>イベント名</th>
       <th>場所</th>
       <th>締め切り</th>
+      <th></th>
+      <th></th>
+      <th></th>
 
     </tr>
   </thead>
@@ -19,9 +22,8 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-
         <td><%= event.event_date %></td>
-        <td><%= event.event_time.strftime("%I:%M ~ ")%></td>
+        <td><%= event.event_time.strftime("%I:%M ~ ") %></td>
         <td><%= event.event_numofpeople %></td>
         <td><%= event.event_name %></td>
         <td><%= event.event_place %></td>
