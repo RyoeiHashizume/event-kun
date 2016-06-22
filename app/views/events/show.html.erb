@@ -8,10 +8,14 @@
 
 <table  class="de_table">
 <tr>
-  <th>日時</th>
+  <th>日にち</th>
   <td><%= @event.event_date %></td>
 </tr>
 <tr>
+  <th>時間</th>
+  <td><%= @event.event_time.strftime("%I:%M ~ ") %></td>
+</tr>
+  <tr>
   <th>場所</th>
   <td><%= @event.event_place %></td>
 </tr>
