@@ -6,27 +6,31 @@
    </h1>
 </p>
 
-<dl  class="de_list">
+<table  class="de_table">
+<tr>
+  <th>日時</th>
+  <td><%= @event.event_date %></td>
+</tr>
+<tr>
+  <th>場所</th>
+  <td><%= @event.event_place %></td>
+</tr>
+<tr>
+  <th>参加人数</th>
+  <td><%= @event.event_numofpeople %></td>
+</tr>
+<tr>
+  <th>締め切り日時</th>
+  <td><%= @event.event_deadline %></td>
+</tr>
 
-  <dt>日時</dt>
-  <dd><%= @event.event_date %></dd>
+</table>
 
-  <dt>場所</dt>
-  <dd><%= @event.event_place %></dd>
 
-  <dt>参加人数</dt>
-  <dd><%= @event.event_numofpeople %></dd>
-
-  <dt>締め切り日時</dt>
-  <dd><%= @event.event_deadline %></dd>
-  
+<dl class="coment">
+  <dt>イベント内容</dt>
+  <dd><%= @event.event_contents %></dd>
 </dl>
-
-
-<div class="coment">
-  <h4>イベント内容</h4>
-  <%= @event.event_contents %>
-</div>
 
 <br />
 <%= link_to 'Edit', edit_event_path(@event) %> |
