@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160622062126) do
+=======
+ActiveRecord::Schema.define(version: 20160622140113) do
+>>>>>>> 237223fbb3daa9e5a5c1d0a010418d972f09937f
 
   create_table "events", force: :cascade do |t|
     t.string   "event_name",        null: false
@@ -25,6 +29,13 @@ ActiveRecord::Schema.define(version: 20160622062126) do
     t.integer  "event_kanji_id",    null: false
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "user_events", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
