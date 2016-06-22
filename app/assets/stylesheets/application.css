@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+body { padding-top: 100px; }
+footer {  border-top: 1px dashed #e00000;
+          margin-top: 100px;
+          padding-top: 15px;   }
+table, td, th { vertical-align: middle; border: none; }
+th { border-bottom: 1px solid #DDD; }
+
+
+.navbar-custom {
+  @extend .navbar-inverse !optional;
+  background-color: white;
+  border-bottom: 3px solid #e00000;
+}
+
+.navbar-brand{
+  font-size:25px;
+}
+.navbar-custom .navbar-brand:focus,
+.navbar-custom .navbar-brand:hover {
+color: #606060;
+background-color: transparent;
