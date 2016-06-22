@@ -9,3 +9,8 @@ User.create(
   gender: if i == 1 then true else false end
   )
 end
+
+UserEvent.create(
+  user_id: 1
+  event_id: 1
+ )

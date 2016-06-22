@@ -20,12 +20,12 @@
 
   <div class="field">
     <%= f.label :kanji, "幹事"%><br />
-    <%= f.check_box :kanji , {}, true, false%> 幹事の方はチェックをお願いします
+    <%= f.check_box :kanji %> 幹事の方はチェックをお願いします
   </div>
 
   <div class="field">
     <%= f.label :gender, "性別"%><br />
-    <%= f.check_box :gender , {}, true, false%> 男性の方はチェックをお願いします
+    <%= f.check_box :gender %> 男性の方はチェックをお願いします
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

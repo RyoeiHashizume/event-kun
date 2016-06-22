@@ -37,5 +37,7 @@
 </dl>
 
 <br />
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<% if current_user.kanji == true %>
+<%= link_to '編集', edit_event_path(@event) %>　
+<% end %>
+<%= link_to '戻る', events_path %>

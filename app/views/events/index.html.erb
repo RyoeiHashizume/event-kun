@@ -1,11 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+
+<% if user_signed_in? %>
+ <% if current_user.kanji == true %>
+  <p class="text-right">
+     新しいイベントを作りたい場合は <%= link_to 'こちら', new_event_path %>へ
+  </p>
+ <% end %>
+<% end %>
+
+
 <h1>イベント一覧</h1>
-
-<table class="ev_table">
-  <thead>
+ <% if current_user.kanji == true %>
+  <% if @events.present? %>
+    <table class="ev_table">
+    <thead>
     <tr>
-
       <th class="day">日にち</th>
       <th class="hour">時間</th>
       <th class="num">参加人数</th>
@@ -13,36 +23,75 @@
       <th class="place">場所</th>
       <th class="deadline">締め切り</th>
       <div class="serch">
-      <th></th>
-      <th></th>
-      <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
       </div>
 
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td class="day"><%= event.event_date %></td>
-        <td class="hour"><%= event.event_time.strftime("%I:%M ~ ") %></td>
-        <td class="num"><%= event.event_numofpeople %></td>
-        <td class="evname"><%= event.event_name %></td>
-        <td class="place"><%= event.event_place %></td>
-        <td class="deadline"><%= event.event_deadline %></td>
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td class="day"><%= event.event_date %></td>
+          <td class="hour"><%= event.event_time.strftime("%I:%M ~ ") %></td>
+          <td class="num"><%= event.event_numofpeople %></td>
+          <td class="evname"><%= event.event_name %></td>
+          <td class="place"><%= event.event_place %></td>
+          <td class="deadline"><%= event.event_deadline %></td>
+          <div class="serch">
+            <div class="text-center">
+              <td><%= link_to '詳細', event %></td>
+              <td><%= link_to '編集', edit_event_path(event) %></td>
+              <td><%= link_to '削除', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </div>
+          </div>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+    <h2 class="text-center">イベントがありません</h2>
+  <% end %>
+  <br>
+  <% else %>
+    <% if @events.present? %>
+    <table class="ev_table">
+    <thead>
+    <tr>
+      <th class="day">日にち</th>
+      <th class="hour">時間</th>
+      <th class="num">参加人数</th>
+      <th class="evname">イベント名</th>
+      <th class="place">場所</th>
+      <th class="deadline">締め切り</th>
+      <div class="serch">
+        <th></th>
+      </div>
+    </tr>
+    </thead>
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td class="day"><%= event.event_date %></td>
+          <td class="hour"><%= event.event_time.strftime("%I:%M ~ ") %></td>
+          <td class="num"><%= event.event_numofpeople %></td>
+          <td class="evname"><%= event.event_name %></td>
+          <td class="place"><%= event.event_place %></td>
+          <td class="deadline"><%= event.event_deadline %></td>
 
-        <div class="serch">
-        <td><%= link_to '詳細', event %></td>
-        <td><%= link_to '編集', edit_event_path(event) %></td>
-        <td><%= link_to '削除', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </div>
-      </tr>
+          <div class="serch">
+          <td><div class="text-center"><%= link_to '詳細', event %></div></td>
+          </div>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+   <h2 class="text-center">イベントがありません</h2>
+  <% end %>
+  <br>
+<% end %>
 
-    <% end %>
-  </tbody>
-</table>
-<br>
 
-
-
-<%= link_to 'New Event', new_event_path %>
