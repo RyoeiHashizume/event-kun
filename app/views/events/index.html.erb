@@ -25,7 +25,6 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-<<<<<<< HEAD
         <td class="day"><%= event.event_date %></td>
         <td class="hour"><%= event.event_time.strftime("%I:%M ~ ") %></td>
         <td class="num"><%= event.event_numofpeople %></td>
@@ -34,7 +33,6 @@
         <td class="deadline"><%= event.event_deadline %></td>
 
         <div class="serch">
-=======
         <td><%= event.event_date %></td>
         <td><%= event.event_time.strftime("%I:%M ~ ") %></td>
         <td><%= event.event_time%></td>
@@ -43,7 +41,6 @@
         <td><%= event.event_place %></td>
         <td><%= event.event_deadline %></td>
 
->>>>>>> 6054a57f36afdcfdd1cbfb099fcbb92257c26892
         <td><%= link_to '詳細', event %></td>
         <td><%= link_to '編集', edit_event_path(event) %></td>
         <td><%= link_to '削除', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
