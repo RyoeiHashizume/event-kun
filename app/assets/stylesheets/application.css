@@ -126,13 +126,10 @@ ul li {
   margin-top: 20px;
 }
 ul li label {
+    width: 150px;
     margin-right: 10px;
     width:block;
     float: left;
-}
-.monokuma{
-  width:block;
-  float: right;
 }
 
 
