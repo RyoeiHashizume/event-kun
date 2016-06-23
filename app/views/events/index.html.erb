@@ -76,6 +76,8 @@
   </thead>
   <tbody>
     <% @events.each do |event| %>
+        <% if event.event_date < Date.today %>
+    <% else %>
     <tr>
       <td class="day"><%= event.event_date %></td>
       <td class="hour"><%= event.event_time.strftime("%I:%M ~ ") %></td>
@@ -88,6 +90,7 @@
         <td><div class="text-center"><%= link_to '詳細', event %></div></td>
       </div>
     </tr>
+     <% end %>
     <% end %>
   </tbody>
 </table>
