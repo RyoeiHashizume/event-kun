@@ -58,6 +58,11 @@ class EventsController < ApplicationController
     current_user.events << @event
     redirect_to @event
   end
+  
+  def unparticipate
+    current_user.events.destroy(Event.find(params[:id]))
+    redirect_to :events
+  end
 
   # DELETE /events/1
   # DELETE /events/1.json

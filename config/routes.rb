@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :events do
     member do
       post 'participate'
+      post 'unparticipate'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

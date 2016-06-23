@@ -53,7 +53,10 @@
     <%= f.label :event_deadline, "締切" %><br>
     <%= f.date_field :event_deadline %>
   </div>
-
+  <div class="field">
+    <%= f.label :event_kanji_id, "幹事" %><br>
+    <%= f.number_field :event_kanji_id %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
