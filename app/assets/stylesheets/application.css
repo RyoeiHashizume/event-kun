@@ -130,6 +130,10 @@ ul li label {
     width:block;
     float: left;
 }
+.monokuma{
+  width:block;
+  float: right;
+}
 
 
 .login{
