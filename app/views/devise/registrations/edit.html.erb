@@ -14,7 +14,7 @@
   <li>
   <div class="field">
     <label ><%= f.label :company_number, "社員番号" %></label>
-      <%= f.number_field :company_number, :placeholder => "6桁の社員番号を入力してください" , 
+      <%= f.number_field :company_number, :placeholder => "6桁の社員番号を入力してください" ,
                          :maxlength =>"6" , :size=>"27" %>
   </div>
   </li>
@@ -82,6 +82,7 @@
 
 
   <br/>
+<div class="edit_act">
   <div class="actions">
     <%= f.submit "変更を保存" %>
   </div>
@@ -94,4 +95,5 @@
 <p> <%= button_to "アカウント消去", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+  </div>
 </div>

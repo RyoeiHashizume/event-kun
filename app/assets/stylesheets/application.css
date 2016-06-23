@@ -132,6 +132,10 @@ ul li label {
     float: left;
 }
 
+.edit_act, .signup_act{
+  text-align="right"
+}
+
 
 .login{
   width: 30%;
@@ -147,4 +151,5 @@ ul li label {
 
 footer {  border-top: 1px dashed #e00000;
           margin-top: 100px;
-          padding-top: 15px;   }
+          padding-top: 15px;   
+}
