@@ -14,12 +14,9 @@
  *= require_self
  */
 body { padding-top: 100px; }
-footer {
-  border-top: 1px dashed #e00000;
-  margin-top: 300px;
-  padding-top: 15px;
-  height: 100px;
-}
+footer {  border-top: 1px dashed #e00000;
+          margin-top: 100px;
+          padding-top: 15px;   }
 
 .ev_table{
 width: 100%;
@@ -50,17 +47,14 @@ border-left: 1px solid #ccc;
 .serch{ width:5%; }
 
 
-th { border-bottom: 1px solid #DDD; }
+.navbar{
+  border-bottom: 3px solid #e00000;
+}
 
 
 .navbar-custom {
   @extend .navbar-inverse !optional;
   background-color: white;
-  border-bottom: 3px solid #e00000;
-  width: 1200px;
-  height: 50px;
-  margin: 0 100px;
-  margin-top: 30px;
 }
 
 .navbar-brand{
@@ -69,12 +63,6 @@ th { border-bottom: 1px solid #DDD; }
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:hover {
 color: #606060;
-background-color: transparent;
-}
-
-a:focus,
-a:hover {
-  color: #606060;
 background-color: transparent;
 }
 
@@ -124,3 +112,15 @@ color: #333;
 font-size: 15px;
 }
 
+.signup{
+  width: 20%;
+  margin: 0 auto;
+}
+.login{
+  width: 20%;
+  margin: 0 auto;
+  border-style: solid ;
+  border-width: 1px;
+  padding: 10px 5px 30px 20px;
+  border-radius: 3px;
+}
