@@ -2,7 +2,7 @@
 0.upto(2) do |i|
 Event.create(
   event_name: "event#{i}",
-  event_date: "2016-06-22",
+  event_date: Date.today,
   event_time: "9:00",
   event_place: "aaaaa",
   event_contents: "ららら",
