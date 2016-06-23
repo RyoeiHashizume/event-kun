@@ -8,7 +8,7 @@
 
 <table  class="de_table">
 <tr>
-  <th>日にち</th>
+  <th>日程</th>
   <td><%= @event.event_date %></td>
 </tr>
 <tr>
@@ -20,14 +20,25 @@
   <td><%= @event.event_place %></td>
 </tr>
 <tr>
-  <th>参加人数</th>
-  <td><%= @event.event_numofpeople %></td>
+  <th>参加可能人数</th>
+  <td><%= @event.event_numofpeople %>人</td>
+</tr>
+<tr>
+  <th>費用</th>
+  <td><%= @event.event_money %>円</td>
 </tr>
 <tr>
   <th>締め切り日時</th>
   <td><%= @event.event_deadline %></td>
 </tr>
-
+<tr>
+  <th>幹事</th>
+  <td></td>
+</tr>
+<tr>
+  <th>連絡先</th>
+  <td></td>
+</tr>
 </table>
 
 
@@ -38,6 +49,6 @@
 
 <br />
 <% if current_user.kanji == true %>
-<%= link_to '編集', edit_event_path(@event) %>　
+<%= link_to '編集', edit_event_path(@event) %>
 <% end %>
 <%= link_to '戻る', events_path %>
