@@ -9,6 +9,6 @@ Event.create(
   event_money: 9000,
   event_numofpeople: 30,
   event_deadline: "2019-04-24",
-  event_kanji_id: 3
+  event_kanji_id: 1
   )
 end
