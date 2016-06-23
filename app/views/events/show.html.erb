@@ -39,6 +39,12 @@
   <th>連絡先</th>
   <td><%= @kanji.email %></td>
 </tr>
+<tr>
+  <th>参加メンバー</th>
+  <% @event.users.each do |user| %>
+    <td><%= user.user_name %></td>
+  <% end %>
+</tr>
 </table>
 
 
@@ -49,7 +55,28 @@
 
 <br />
 
-<%= link_to '参加', [:participate, @event] , method: :post, class: "btn btn-primary"%>
+<% event_flag = false %>
+<% user_count = 0 %>
+
+<% @event.users.each do |user| %>
+<% user_count += 1 %>
+<% end %>
+
+
+<% current_user.events.each do |event| %>
+<% if event.id == @event.id%>
+<% event_flag = true %>
+<% break %>
+<% end %>
+<% end %>
+
+<% if event_flag %>
+  <strong>すでに参加されています</strong>
+<% elsif user_count >= @event.event_numofpeople.to_i %>
+  <strong>参加人数を超えています</strong>
+<% else %>
+  <%= link_to '参加', [:participate, @event] , method: :post, class: "btn btn-primary"%>
+<% end %>
 
 <% if current_user.kanji == true %>
 <%= link_to '編集', edit_event_path(@event) %>
