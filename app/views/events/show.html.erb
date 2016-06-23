@@ -1,52 +1,56 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <h1>
+<h1>
   <%= @event.event_name %>
-   </h1>
+</h1>
 </p>
 
 <table  class="de_table">
-<tr>
-  <th>日程</th>
-  <td><%= @event.event_date %></td>
-</tr>
-<tr>
-  <th>時間</th>
-  <td><%= @event.event_time.strftime("%I:%M ~ ") %></td>
-</tr>
   <tr>
-  <th>場所</th>
-  <td><%= @event.event_place %></td>
-</tr>
-<tr>
-  <th>参加可能人数</th>
-  <td><%= @event.event_numofpeople %>人</td>
-</tr>
-<tr>
-  <th>費用</th>
-  <td><%= @event.event_money %>円</td>
-</tr>
-<tr>
-  <th>締め切り日時</th>
-  <td><%= @event.event_deadline %></td>
-</tr>
-<tr>
-  <th>幹事</th>
-  <td><%= @kanji.user_name %></td>
-</tr>
-<tr>
-  <th>連絡先</th>
-  <td><%= @kanji.email %></td>
-</tr>
-<tr>
-  <th>参加メンバー</th>
-  <% @event.users.each do |user| %>
-    <td><%= user.user_name %></td>
+    <th>日程</th>
+    <td><%= @event.event_date %></td>
+  </tr>
+  <tr>
+    <th>時間</th>
+    <td><%= @event.event_time.strftime("%I:%M ~ ") %></td>
+  </tr>
+  <tr>
+    <th>場所</th>
+    <td><%= @event.event_place %></td>
+  </tr>
+  <tr>
+    <th>参加可能人数</th>
+    <td><%= @event.event_numofpeople %>人</td>
+  </tr>
+  <tr>
+    <th>費用</th>
+    <td><%= @event.event_money %>円</td>
+  </tr>
+  <tr>
+    <th>締め切り日時</th>
+    <td><%= @event.event_deadline %></td>
+  </tr>
+  <tr>
+    <th>幹事</th>
+    <td><%= @kanji.user_name %></td>
+  </tr>
+  <tr>
+    <th>連絡先</th>
+    <td><%= @kanji.email %></td>
+  </tr>
+  <% @event.users.each_with_index do |user, i| %>
+  <tr>
+    <% if i == 0 %>
+    <th>参加メンバー</th>
+          <td><%= user.user_name %></td>
+    <% else %>
+      <th></th>
+          <td><%= user.user_name %></td>
+    <% end %>
+  </tr>
   <% end %>
-</tr>
 </table>
-
 
 <dl class="coment">
   <dt>イベント内容</dt>
@@ -71,11 +75,11 @@
 <% end %>
 
 <% if event_flag %>
-  <strong>すでに参加されています</strong>
+<strong>すでに参加されています</strong>
 <% elsif user_count >= @event.event_numofpeople.to_i %>
-  <strong>参加人数を超えています</strong>
+<strong>参加人数を超えています</strong>
 <% else %>
-  <%= link_to '参加', [:participate, @event] , method: :post, class: "btn btn-primary"%>
+<%= link_to '参加', [:participate, @event] , method: :post, class: "btn btn-primary"%>
 <% end %>
 
 <% if current_user.kanji == true %>
