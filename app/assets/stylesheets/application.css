@@ -117,18 +117,20 @@ font-size: 15px;
 }
 
 .signup , .edit{
-  width: 35%;
+  width: 40%;
   margin: 0 auto;
 }
 
 ul li {
     list-style: none;
-    label {
-    margin-right: 10px;
-    width:100px;
-    float: left;
-    }
+  margin-top: 20px;
 }
+ul li label {
+    margin-right: 10px;
+    width:block;
+    float: left;
+}
+
 
 .login{
   width: 30%;
