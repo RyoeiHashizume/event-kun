@@ -5,41 +5,43 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :user_name, "名前" %><br />
+    <%= f.label :user_name, "名前" %>
     <%= f.text_field :user_name, :placeholder => "User name"%>
   </div>
 
   <div class="field">
-    <%= f.label :company_number, "社員番号" %><br />
+    <%= f.label :company_number, "社員番号" %>
     <%= f.number_field :company_number, :placeholder => "6桁の社員番号を入力してください"%>
   </div>
 
 
   <div class="field">
-    <%= f.label :email ,"連絡先" %><br />
+    <%= f.label :email ,"連絡先" %>
     <%= f.email_field :email, :placeholder => "email" , autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :kanji, "幹事"%><br />
+    <%= f.label :kanji, "幹事"%>
     <%= f.check_box :kanji %> 幹事の方はチェックをお願いします
   </div>
 
   <div class="field">
-    <%= f.label :gender, "性別"%><br />
+    <%= f.label :gender, "性別"%>
     <%= f.check_box :gender %> 男性の方はチェックをお願いします
   </div>
 
   <div class="field">
+    <br />
     <%= f.label :password, "パスワード" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <% end %>
     <%= f.password_field :password ,:placeholder => "Password (6minimum characters)" , autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "パスワード(確認用)" %><br />
+    <br />
+    <%= f.label :password_confirmation, "パスワード(確認用)" %>
     <%= f.password_field :password_confirmation , autocomplete: "off" %>
   </div>
 
