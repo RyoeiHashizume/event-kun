@@ -10,6 +10,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @kanji = User.find_by(id: @event.event_kanji_id)
   end
 
   # GET /events/new
@@ -25,7 +26,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-
+    @event.event_kanji_id = current_user.id
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -55,10 +56,14 @@ class EventsController < ApplicationController
 
   def participate
     @event = Event.find(params[:id])
-    current_user.events << @event
+    if @event.event_date < Date.today
+      # do nothing
+    else
+      current_user.events << @event
+    end
     redirect_to @event
   end
-  
+
   def unparticipate
     current_user.events.destroy(Event.find(params[:id]))
     redirect_to :events

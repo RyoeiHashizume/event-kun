@@ -64,6 +64,13 @@ color: #606060;
 background-color: transparent;
 }
 
+
+a:focus,
+a:hover {
+color: #606060;
+background-color: transparent;
+}
+
 .de_table{
 width: 60%;
 padding-left: 20px;
