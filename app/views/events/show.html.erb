@@ -33,7 +33,7 @@
 </tr>
 <tr>
   <th>幹事</th>
-  <td></td>
+  <td><%= @kanji.user_name %></td>
 </tr>
 <tr>
   <th>連絡先</th>
@@ -48,6 +48,9 @@
 </dl>
 
 <br />
+
+<%= link_to '参加', [:participate, @event] , method: :post, class: "btn btn-primary"%>
+
 <% if current_user.kanji == true %>
 <%= link_to '編集', edit_event_path(@event) %>
 <% end %>
