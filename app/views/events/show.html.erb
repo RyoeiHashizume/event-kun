@@ -79,7 +79,7 @@
 <% elsif user_count >= @event.event_numofpeople.to_i %>
 <strong>参加人数を超えています</strong>
 <% else %>
-<%= link_to '参加', [:participate, @event] , method: :post, class: "btn btn-primary"%>
+<%= button_to '参加', [:participate, @event] , method: :post%><br />
 <% end %>
 
 <% if current_user.kanji == true %>
