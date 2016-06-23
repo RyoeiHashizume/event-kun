@@ -112,7 +112,7 @@ color: #333;
 font-size: 15px;
 }
 
-.signup{
+.signup , .edit{
   width: 20%;
   margin: 0 auto;
 }
