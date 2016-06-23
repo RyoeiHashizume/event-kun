@@ -47,7 +47,6 @@
     <br />
     <td><%= f.label :password, "新しいパスワード"%> </td>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %> <%# <br /> %>
     <th><%= f.password_field :password, autocomplete: "off", :placeholder => "Password (6minimum characters)" %></th>
   </div>
