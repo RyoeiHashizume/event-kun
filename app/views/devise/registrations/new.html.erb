@@ -17,7 +17,7 @@
   <div class="field">
     <label><%= f.label :company_number, "社員番号" %></label>
     <div class="monokuma">
-      <%= f.number_field :company_number, :placeholder => "6桁の社員番号を入力してください" , 
+      <%= f.number_field :company_number, :placeholder => "6桁の社員番号を入力してください" ,
                          :maxlength =>"6" , :size=>"27" %>
     </div>
   </div>
@@ -71,10 +71,13 @@
   </li>
 
 </ul>
+
+
   <br/>
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+
 <% end %>
 
 <%= render "devise/shared/links" %>
