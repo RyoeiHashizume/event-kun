@@ -7,35 +7,40 @@
   <li>
   <div class="field">
     <label for="name"><%= f.label :user_name, "名前" %></label>
-    <%= f.text_field :user_name, :placeholder => "User name" , :size=>"27"%>
+    <div class="monokuma"><%= f.text_field :user_name, :placeholder => "User name" , :size=>"27"%></div>
   </div>
   </li>
 
   <li>
   <div class="field">
     <label for="num"><%= f.label :company_number, "社員番号" %></label>
-    <%= f.number_field :company_number, :placeholder => "6桁の社員番号を入力してください" , :size=>"27" %>
+    <div class="monokuma">
+      <%= f.number_field :company_number, :placeholder => "6桁の社員番号を入力してください" , 
+                         :maxlength =>"6" , :size=>"27" %>
+    </div>
   </div>
   </li>
 
   <li>
   <div class="field">
     <label for="tel"><%= f.label :email ,"連絡先" %></label>
-    <%= f.email_field :email, autofocus: true, :placeholder => "email" , :size=>"27" %>
+    <div class="monokuma">
+      <%= f.email_field :email, autofocus: true, :placeholder => "email" , :size=>"27" %>
+    </div>
   </div>
   </li>
 
   <li>
   <div class="field">
     <label for="kanji"><%= f.label :kanji, "幹事"%></label>
-    <%= f.check_box :kanji %> 幹事の方はチェックをお願いします
+    <div class="monokuma"><%= f.check_box :kanji %> 幹事の方はチェックをお願いします</div>
   </div>
   </li>
 
   <li>
   <div class="field">
     <label for="gender"><%= f.label :gender, "性別"%></label>
-    <%= f.check_box :gender %> 男性の方はチェックをお願いします
+    <div class="monokuma"><%= f.check_box :gender %> 男性の方はチェックをお願いします</div>
   </div>
   </li>
 
@@ -49,8 +54,10 @@
     <label for="pass"><%= f.label :password, "新しいパスワード"%> </label>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %> <%# <br /> %>
-    <%= f.password_field :password, autocomplete: "off", :placeholder => "Password (6minimum characters)" , :size=>"27" %>
+    <% end %>
+    <div class="monokuma">
+      <%= f.password_field :password, autocomplete: "off", :placeholder => "Password (6minimum characters)" , :size=>"27" %>
+    </div>
   </div>
   </li>
 
@@ -60,9 +67,11 @@
     <label for="newpass"><%= f.label :password_confirmation, "新しいパスワード(確認用)"%></label>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><%# <br /> %>
+    <% end %>
+    <div class="monokuma">
       <%= f.password_field :password_confirmation, autocomplete: "off",
                            :placeholder => "Password (6minimum characters)" , :size=>"27" %>
+    </div>
   </div>
   </li>
 
@@ -72,14 +81,16 @@
     <label for="nowpass"><%= f.label :current_password, "現在のパスワード" %></label>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><%# <br /> %>
+    <% end %>
+    <div class="monokuma">
       <%= f.password_field :current_password, autocomplete: "off",
           :placeholder => "Password (6minimum characters)" , :size=>"27" %>
+    </div>
   </div>
   </li>
 </ul>
-  
-  
+
+
   <br/>
   <div class="actions">
     <%= f.submit "変更を保存" %>
