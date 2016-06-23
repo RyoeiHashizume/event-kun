@@ -86,12 +86,12 @@
   <div class="actions">
     <%= f.submit "変更を保存" %>
   </div>
-
+</div>
 <% end %>
 
 <br/>
 <h3>アカウント消去</h3>
-
+<div class ="edit_del">
 <p> <%= button_to "アカウント消去", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
