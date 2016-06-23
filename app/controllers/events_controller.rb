@@ -10,7 +10,6 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    
   end
 
   # GET /events/new
@@ -41,6 +40,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
+    @event.event_kanji_id = current_user.find(params[:id])
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
@@ -50,6 +50,13 @@ class EventsController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+
+  def participate
+    @event = Event.find(params[:id])
+    current_user.events << @event
+    redirect_to @event
   end
 
   # DELETE /events/1
@@ -70,8 +77,8 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:event_name, :event_date, :event_time, 
-                                    :event_place, :event_contents, :event_money, 
+      params.require(:event).permit(:event_name, :event_date, :event_time,
+                                    :event_place, :event_contents, :event_money,
                                     :event_numofpeople, :event_deadline, :event_kanji_id)
     end
 end
