@@ -94,6 +94,8 @@
 <div class ="edit_del">
 <p> <%= button_to "アカウント消去", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+  <div class="edit_back">
+    <%= link_to "Back", :back %>
+    </div>
   </div>
 </div>
